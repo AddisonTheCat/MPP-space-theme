@@ -2,7 +2,7 @@ var a=(new Date).toLocaleTimeString();setInterval(function(){a!==(new Date).toLo
 for (let i = 0; i < 10; i = i + 0.1) {setTimeout(function() {eval('Array.from(document.querySelectorAll("*")).forEach(el => {$(el).css({"border-radius": "' + i + 'px", "-webkit-border-radius": "' + i + 'px", "-moz-border-radius": "' + i + 'px" })})')}, i)}
 setInterval(() => {
 setTimeout(() => {
-Array.from(document.querySelectorAll("*")).forEach(el => {$(el).css({"border-radius": "10px", "-webkit-border-radius": "10px", "-moz-border-radius": "10px" });$(el).style.opacity = "0.2"})
+Array.from(document.querySelectorAll("*")).forEach(el => {$(el).css({"border-radius": "10px", "-webkit-border-radius": "10px", "-moz-border-radius": "10px" });$(el).css({"border" : "none !important"})})
 }, 3000);
 document.body.style = `background-image: url('https://i.ibb.co/5WztDgx/space-earth.jpg'); background-position: 45% 55%; background-size: cover; backdrop-effect: blur(0px);`
 }, 1);
