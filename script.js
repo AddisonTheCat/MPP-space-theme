@@ -7,10 +7,8 @@ setTimeout(() => {
 Array.from(document.querySelectorAll("*")).forEach(el => {$(el).css({"border-radius": "10px", "-webkit-border-radius": "10px", "-moz-border-radius": "10px" });)})
 }, 3000);
 document.body.style = `background-image: url('https://i.ibb.co/5WztDgx/space-earth.jpg'); background-position: 45% 55%; background-size: cover; backdrop-effect: blur(0px);`
-//sort names by color
-var arr=$("#names .name");arr.sort(function(a,b){a=a.style.backgroundColor;b=b.style.backgroundColor;return a>b?1:a<b?-1:0});
 }, 1);
-//chat buffer
+chat buffer
 class ChatBuffer {
 constructor() {
 this.messagesInPeriod = 0;
