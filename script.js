@@ -6,7 +6,7 @@ Array.from(document.querySelectorAll("*")).forEach(el => {$(el).css({"border-rad
 }, 3000);
 document.body.style = `background-image: url('https://i.ibb.co/5WztDgx/space-earth.jpg'); background-position: 25% 75%; background-size: cover; backdrop-effect: blur(2px);`
 }, 1);
-Array.from(document.querySelectorAll('*')).forEach(el => {$(el).mousemove(function(e){ var amountMovedX = (e.pageX * -1 / 9); var amountMovedY = (e.pageY * -1 / 9); $(this).css('background-position', amountMovedX + 'px ' + amountMovedY + 'px'); });})
+Array.from(document.querySelectorAll('*')).forEach(el => {$(el).mousemove(function(e){ var amountMovedX = (e.pageX * -1 / 6); var amountMovedY = (e.pageY * -1 / 6); $(this).css('background-position', amountMovedX + 'px ' + amountMovedY + 'px'); });})
 class ChatBuffer {
 constructor() {
 this.messagesInPeriod = 0;
