@@ -4,9 +4,8 @@ setInterval(() => {
 setTimeout(() => {
 Array.from(document.querySelectorAll("*")).forEach(el => {$(el).css({"border-radius": "10px", "-webkit-border-radius": "10px", "-moz-border-radius": "10px" })})
 }, 3000);
-document.body.style = `background-image: url('https://i.ibb.co/5WztDgx/space-earth.jpg'); background-position: 25% 75%; background-size: cover; backdrop-effect: blur(2px);`
+document.body.style = `background-image: url('https://i.ibb.co/5WztDgx/space-earth.jpg'); background-position: 25% 75%; background-size: cover; backdrop-effect: blur(0px);`
 }, 1);
-Array.from(document.querySelectorAll('*')).forEach(el => {$(el).mousemove(function(e){ var amountMovedX = (e.pageX * -1 / 6); var amountMovedY = (e.pageY * -1 / 6); $(this).css('background-position', amountMovedX + 'px ' + amountMovedY + 'px'); });})
 class ChatBuffer {
 constructor() {
 this.messagesInPeriod = 0;
