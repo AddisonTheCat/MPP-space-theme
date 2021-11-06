@@ -2,6 +2,7 @@ var a=(new Date).toLocaleTimeString();setInterval(function(){a!==(new Date).toLo
 for (let i = 0; i < 10; i = i + 0.1) {setTimeout(function() {eval('Array.from(document.querySelectorAll("*")).forEach(el => {$(el).css({"border-radius": "' + i + 'px", "-webkit-border-radius": "' + i + 'px", "-moz-border-radius": "' + i + 'px" })})')}, i)}
 setInterval(() => {
 if(i<10){eval('Array.from(document.querySelectorAll("*")).forEach(el => {$(el).css({"border-radius": "' + i + 'px", "-webkit-border-radius": "' + i + 'px", "-moz-border-radius": "' + i + 'px" })})')}
+document.body.style = `background-image: url('https://i.ibb.co/5WztDgx/space-earth.jpg'); background-position: 25% 75%; background-size: cover; backdrop-effect: blur(0px);`
 $("#room").css({background: "rgba(0, 0, 0, 0.5)" });
 $("#room .more").css({background: "rgba(0, 0, 0, 0.5)"});
 $("#room .expand").css({background: "rgba(0, 0, 0, 0.5)"});
@@ -18,5 +19,4 @@ $(".notification-body").css({background: "rgba(0, 0, 0, 0.5)", "backdrop-filter"
 $(".notification .x:hover").css({background: "rgba(0, 0, 0, 0.5)"});
 $(".notification-body").css({background: "rgba(0, 0, 0, 0.5)", "backdrop-filter": "blur(2px)"});
 $(".ugly-button .stuck").css({background: "rgba(0, 0, 0, 0.5)"});
-document.body.style = `background-image: url('https://i.ibb.co/5WztDgx/space-earth.jpg'); background-position: 25% 75%; background-size: cover; backdrop-effect: blur(0px);`
 }, 1);
