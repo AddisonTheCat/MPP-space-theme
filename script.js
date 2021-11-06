@@ -18,3 +18,4 @@ $(".ugly-button .stuck").css({background: "rgba(0, 0, 0, 0.5)"});
 document.body.style = `background-image: url('https://i.ibb.co/5WztDgx/space-earth.jpg'); background-position: 25% 75%; background-size: cover; backdrop-effect: blur(2px);`
 }, 200);
 for (let i = 0; i < 10; i = i + 0.5) {setTimeout(function() {eval('Array.from(document.querySelectorAll("*")).forEach(el=> {$(el).css({"border-radius": "' + i + 'px", "-webkit-border-radius": "' + i + 'px", "-moz-border-radius": "' + i + 'px" })})')}, i)}
+MPP.chat.send = (msg) => {MPP.client.sendArray([{m: 'a',msg.replace(/\s{2,}/g," ")}])}
