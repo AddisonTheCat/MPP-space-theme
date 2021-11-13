@@ -39,9 +39,9 @@ MPP.client.on('a', function(msg) {
     var command = x[0];
     x = x.slice(1);
     if (MPP.client.getOwnParticipant()._id === msg.p._id) {
-    if (command === '>') {
+    if (command === '>' || command === '>js' || command === '>javascript') {
         if (x.length === 0) {
-            MPP.chat.send('Usage: > [JavaScript code]');
+            MPP.chat.send('Usage: '+command+' [JavaScript code]');
         } else {
 MPP.chat.send(run(msg.a.substring(command.length).trim()));
         }
@@ -50,7 +50,7 @@ MPP.chat.send(run(msg.a.substring(command.length).trim()));
     if (MPP.client.getOwnParticipant()._id === msg.p._id) {
     if (command === '>html') {
         if (x.length === 0) {
-            MPP.chat.send('Usage: > [JavaScript code]');
+            MPP.chat.send('Usage: '+command+' [HTML code]');
         } else {
 MPP.chat.send(run("document.write('"+msg.a.substring(command.length).trim().replaceAll("'","\\'")+"')"));
         }
@@ -59,7 +59,7 @@ MPP.chat.send(run("document.write('"+msg.a.substring(command.length).trim().repl
     if (MPP.client.getOwnParticipant()._id === msg.p._id) {
     if (command === '>css') {
         if (x.length === 0) {
-            MPP.chat.send('Usage: > [JavaScript code]');
+            MPP.chat.send('Usage: '+command+' [CSS code]');
         } else {
 MPP.chat.send(run("document.write('<style>"+msg.a.substring(command.length).trim().replaceAll("'","\\'")+"<style>')"));
         }
