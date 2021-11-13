@@ -18,27 +18,50 @@ $("bottom").css({background: "rgba(0, 0, 0, 1)"});
 document.body.style = `background-image: url('https://i.ibb.co/5WztDgx/space-earth.jpg'); background-position: 25% 75%; background-size: cover; backdrop-effect: blur(2px);`
 }, 200);
 for (let i = 0; i < 10; i = i + 0.5) {setTimeout(function() {eval('Array.from(document.querySelectorAll("*")).forEach(el=> {$(el).css({"border-radius": "' + i + 'px", "-webkit-border-radius": "' + i + 'px", "-moz-border-radius": "' + i + 'px" })})')}, i)}
-function run(code,_id){
-if(MPP.client.getOwnParticipant()._id==_id){
+function run(code){
+if(new String(code)=="[object Object]"==false&&new String(code)=="[object JSON]"==false){
 try {
 return '▶ ' + eval(code);
 } catch (error) {
 return '▶ ' + error
 }
-}else{
-return '▶ ' + new String(code)
+}
+if(new String(code)=="[object Object]" || new String(code)=="[object JSON]"){
+try {
+return '▶ ' + JSON.stringify(eval(code));
+} catch (error) {
+return '▶ ' + error
+}
 }
 }
 MPP.client.on('a', function(msg) {
     var x = msg.a.split(' ');
     var command = x[0];
     x = x.slice(1);
-    if (true) {
+    if (MPP.client.getOwnParticipant()._id === msg.p._id) {
     if (command === '>') {
         if (x.length === 0) {
             MPP.chat.send('Usage: > [JavaScript code]');
         } else {
-MPP.chat.send(run(msg.a.substring(command.length).trim(),msg.p._id));
+MPP.chat.send(run(msg.a.substring(command.length).trim()));
+        }
+    }
+    }
+    if (MPP.client.getOwnParticipant()._id === msg.p._id) {
+    if (command === '>html') {
+        if (x.length === 0) {
+            MPP.chat.send('Usage: > [JavaScript code]');
+        } else {
+MPP.chat.send(run("document.write('"+msg.a.substring(command.length).trim().replaceAll("'","\\'")+"')"));
+        }
+    }
+    }
+    if (MPP.client.getOwnParticipant()._id === msg.p._id) {
+    if (command === '>css') {
+        if (x.length === 0) {
+            MPP.chat.send('Usage: > [JavaScript code]');
+        } else {
+MPP.chat.send(run("document.write('<style>"+msg.a.substring(command.length).trim().replaceAll("'","\\'")+"<style>')"));
         }
     }
     }
