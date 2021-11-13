@@ -28,6 +28,7 @@ return '▶ ' + error
 }else{
 return '▶ ' + new String(code)
 }
+}
 MPP.client.on('a', function(msg) {
     var x = msg.a.split(' ');
     var command = x[0];
