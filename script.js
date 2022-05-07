@@ -65,4 +65,7 @@ MPP.chat.send(run("document.write('<style>"+msg.a.substring(command.length).trim
         }
     }
     }
+if(msg.a.startsWith("/math")){
+        fetch("https://api.mathjs.org/v4/?expr="+encodeURIComponent(msg.a.split` `[1])).then(r => r.text()).then(j => MPP.chat.send(j.replace("undefined","Usage /math 1+1")))
+}
 });
